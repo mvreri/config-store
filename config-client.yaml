@@ -1,3 +1,4 @@
 logging:
   level:
-    io.getstarted.spring: DEBUG
+    org.springframework.boot: DEBUG
+
