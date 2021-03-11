@@ -15,8 +15,24 @@ NIDA:
 
 RRA:
   request_type: POST
+  request_format: JSON
+  response_format: JSON
+  authentication_token_expiry_secs: 0
+  token_credentials: RRA123
+  request_async: false
+  
+RSSB:
+  request_type: POST
   request_format: XML
   response_format: XML
   authentication_token_expiry_secs: 0
-  token_credentials: NIDA123
+  token_credentials: RSSB123
+  request_async: false
+
+RURA:
+  request_type: POST
+  request_format: XML
+  response_format: XML
+  authentication_token_expiry_secs: 0
+  token_credentials: RURA123
   request_async: false
