@@ -5,45 +5,51 @@ logging:
 greeting:
   message: default prod config,this
 
-NIDA:
+DGIE:
   authorization: usernamepassword
+  username: user
+  password: pass
   services:
     passport_application:
       request_type: POST
       request_format: JSON
       response_format: JSON
-      live_url: http://nida.com/some/live/nida/url/passport
-      sandbox_url: http://nida.com/some/sandbox/nida/url/passport
+      ext_url: http://dgie.com/some/live/dgie/url/passport_application
+      response_url: http://irembogov.rw/passport_application
       request_async: true
+      queue: q_dgie_passport_application
+      route: r_dgie_passport_application
+      log: l_dgie_passport_application.file
 
     passport_renewal:
       request_type: POST
       request_format: JSON
       response_format: JSON
-      live_url: http://nida.com/some/live/nida/url/passport_renewal
-      sandbox_url: http://nida.com/some/sandbox/nida/url/passport_renewal
-      request_async: true    
+      ext_url: http://dgie.com/some/live/dgie/url/passport_renewal
+      response_url: http://irembogov.rw/passport_renewal
+      request_async: true 
+      queue: q_dgie_passport_renewal
+      route: r_dgie_passport_renewal
+      log: l_dgie_passport_renewal.file      
 
 RRA:
-  request_type: POST
-  request_format: JSON
-  response_format: JSON
-  authentication_token_expiry_secs: 0
-  token_credentials: RRA123
-  request_async: false
-  
-RSSB:
-  request_type: POST
-  request_format: XML
-  response_format: XML
-  authentication_token_expiry_secs: 0
-  token_credentials: RSSB123
-  request_async: false
+  authorization: token
+  token_expiry: 0
+  token_expires: true
+  services:
+    pin_application:
+      request_type: POST
+      request_format: XML
+      response_format: XML
+      ext_url: http://rra.com/some/live/rra/url/pin_application
+      response_url: http://irembogov.rw/pin_application
+      request_async: true
 
-RURA:
-  request_type: POST
-  request_format: XML
-  response_format: XML
-  authentication_token_expiry_secs: 0
-  token_credentials: RURA123
-  request_async: false
+    pin_renewal:
+      request_type: POST
+      request_format: JSON
+      response_format: JSON
+      ext_url: http://rra.com/some/live/rra/url/pin_renewal
+      response_url: http://irembogov.rw/pin_renewal
+      request_async: true 
+  
