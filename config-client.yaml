@@ -10,8 +10,8 @@ greeting:
   message: default prod config,this
 
 authorization: usernamepassword
-username: user
-password: pass
+auth_username: user
+auth_password: pass
     
 services:
     passport_application:
