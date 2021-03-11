@@ -3,7 +3,7 @@ logging:
     org.springframework.boot: DEBUG
 
 greeting:
-  message: default config,this
+  message: default dev config,this
 
 NIDA:
   request_type: POST
