@@ -6,15 +6,15 @@ summary:
   message: default prod config,this
 
 authorization: 
-	type: username_password
-	auth_username: user
-	auth_password: pass
-	token: 
-		username: usertoken
-		password: passtoken
-		url: http://dgie.com/token/url
-		token_ttl: 10000
-		payload_type: XML
+    auth_type: username_password
+    auth_username: user
+    auth_password: pass
+    token: 
+        username: usertoken
+        password: passtoken
+        url: http://dgie.com/token/url
+        token_ttl: 10000
+        payload_type: XML
 
 services:
     passport_application:
