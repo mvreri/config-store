@@ -2,10 +2,6 @@ logging:
   level:
     org.springframework.boot: DEBUG
 
-logging:
-  level:
-    org.springframework.boot: DEBUG
-
 greeting:
   message: default prod config,this
 
