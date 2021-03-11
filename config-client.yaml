@@ -2,54 +2,36 @@ logging:
   level:
     org.springframework.boot: DEBUG
 
+logging:
+  level:
+    org.springframework.boot: DEBUG
+
 greeting:
   message: default prod config,this
 
-DGIE:
-  authorization: usernamepassword
-  username: user
-  password: pass
-  services:
+authorization: usernamepassword
+    username: user
+    password: pass
+    
+services:
     passport_application:
-      request_type: POST
-      request_format: JSON
-      response_format: JSON
-      ext_url: http://dgie.com/some/live/dgie/url/passport_application
-      response_url: http://irembogov.rw/passport_application
-      request_async: true
-      queue: q_dgie_passport_application
-      route: r_dgie_passport_application
-      log: l_dgie_passport_application.file
+        request_type: POST
+        request_format: JSON
+        response_format: JSON
+        ext_url: http://dgie.com/some/live/dgie/url/passport_application
+        response_url: http://irembogov.rw/passport_application
+        request_async: true
+        queue: q_dgie_passport_application
+        route: r_dgie_passport_application
+        log: l_dgie_passport_application.file
 
     passport_renewal:
-      request_type: POST
-      request_format: JSON
-      response_format: JSON
-      ext_url: http://dgie.com/some/live/dgie/url/passport_renewal
-      response_url: http://irembogov.rw/passport_renewal
-      request_async: true 
-      queue: q_dgie_passport_renewal
-      route: r_dgie_passport_renewal
-      log: l_dgie_passport_renewal.file      
-
-RRA:
-  authorization: token
-  token_expiry: 0
-  token_expires: true
-  services:
-    pin_application:
-      request_type: POST
-      request_format: XML
-      response_format: XML
-      ext_url: http://rra.com/some/live/rra/url/pin_application
-      response_url: http://irembogov.rw/pin_application
-      request_async: true
-
-    pin_renewal:
-      request_type: POST
-      request_format: JSON
-      response_format: JSON
-      ext_url: http://rra.com/some/live/rra/url/pin_renewal
-      response_url: http://irembogov.rw/pin_renewal
-      request_async: true 
-  
+        request_type: POST
+        request_format: JSON
+        response_format: JSON
+        ext_url: http://dgie.com/some/live/dgie/url/passport_renewal
+        response_url: http://irembogov.rw/passport_renewal
+        request_async: true 
+        queue: q_dgie_passport_renewal
+        route: r_dgie_passport_renewal
+        log: l_dgie_passport_renewal.file   
