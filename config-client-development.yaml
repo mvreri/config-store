@@ -1,13 +1,15 @@
+NIDA:
+  request_type: POST
+  request_format: XML
+  response_format: XML
+  authentication_token_expiry_secs: 0
+  token_credentials: NIDA123
+  request_async: true
 
-rra:
-  request_type:GET,
-  request_format: JSON,
-  response_format: JSON,
-  authentication_is_token:false,
-  authentication_token_expiry_secs: 0,
-  request_async:false,
-  required_parameters: identificationNumber,identificationType,
-  camel_route_id: route-NIDA-GET-recordexternal,
-  kafka_queue_id: queue-NIDA-GET-recordexternal,
-  processing_required: false,
-  transformation_required: false
+RRA:
+  request_type: POST
+  request_format: XML
+  response_format: XML
+  authentication_token_expiry_secs: 0
+  token_credentials: NIDA123
+  request_async: false
