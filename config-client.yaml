@@ -6,12 +6,23 @@ greeting:
   message: default prod config,this
 
 NIDA:
-  request_type: POST
-  request_format: XML
-  response_format: XML
-  authentication_token_expiry_secs: 0
-  token_credentials: NIDA123
-  request_async: true
+  authorization: usernamepassword
+  services:
+    passport_application:
+      request_type: POST
+      request_format: JSON
+      response_format: JSON
+      live_url: http://nida.com/some/live/nida/url/passport
+      sandbox_url: http://nida.com/some/sandbox/nida/url/passport
+      request_async: true
+
+    passport_renewal:
+      request_type: POST
+      request_format: JSON
+      response_format: JSON
+      live_url: http://nida.com/some/live/nida/url/passport_renewal
+      sandbox_url: http://nida.com/some/sandbox/nida/url/passport_renewal
+      request_async: true    
 
 RRA:
   request_type: POST
