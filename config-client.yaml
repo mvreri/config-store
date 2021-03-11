@@ -2,13 +2,20 @@ logging:
   level:
     org.springframework.boot: DEBUG
 
-greeting:
+summary:
   message: default prod config,this
 
-authorization: usernamepassword
-auth_username: user
-auth_password: pass
-    
+authorization: 
+	type: username_password
+	auth_username: user
+	auth_password: pass
+	token: 
+		username: usertoken
+		password: passtoken
+		url: http://dgie.com/token/url
+		token_ttl: 10000
+		payload_type: XML
+
 services:
     passport_application:
         request_type: POST
@@ -30,4 +37,4 @@ services:
         request_async: true 
         queue: q_dgie_passport_renewal
         route: r_dgie_passport_renewal
-        log: l_dgie_passport_renewal.file   
+        log: l_dgie_passport_renewal.file
