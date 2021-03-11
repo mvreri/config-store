@@ -1,3 +1,10 @@
+logging:
+  level:
+    org.springframework.boot: DEBUG
+
+greeting:
+  message: default config,this
+
 NIDA:
   request_type: POST
   request_format: XML
